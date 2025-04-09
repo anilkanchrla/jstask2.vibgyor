@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibgoyr</title>
+    <style>
+        .colorbtn{
+            padding: 10px 15px;
+            color: rgb(10, 10, 10);
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 1px 2px 3px black;
+        }
+    </style>
+</head>
+<body>
+    <h2><img src="./download.png" alt="Rainbow"> VIBGYOR Buttons</h2>
+    <div id="btn_container"></div>
+
+    <script>
+        const container=document.getElementById("btn_container");
+
+
+        for (let i=1; i<=7; i++){
+            const button=document.createElement("button");
+            button.className="colorbtn";
+
+            let colorName="";
+            let color="";
+
+            if (i===1){
+                colorName = "Violet";
+                color = "Violet";
+            }else if(i===2){
+                colorName = "Indigo";
+                color = "Indigo";
+            }else if(i===3){
+                colorName = "Blue";
+                color = "Blue";
+            }else if(i===4){
+                colorName = "Green";
+                color = "Green";
+            }else if(i===5){
+                colorName = "Yellow";
+                color = "Yellow";
+            }else if(i===6){
+                colorName = "Orange";
+                color = "Orange";
+            }else if(i===7){
+                colorName = "Red";
+                color = "Red";
+            }
+
+            button.textContent = colorName;
+            button.style.backgroundColor = color;
+
+            button.addEventListener("click",()=>{
+                document.body.style.backgroundColor = color;
+            });
+
+            container.appendChild(button);
+        }
+    </script>
+</body>
+</html>
